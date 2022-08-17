@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:river_central/controllers/app_colors.dart';
+import 'package:river_central/views/dashboard.dart';
 import 'package:river_central/views/routes/routes.dart';
 import 'package:river_central/views/splash.dart';
 
@@ -14,10 +16,14 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'River Central',
-      theme: ThemeData(primarySwatch: Colors.indigo),
-      initialRoute: Routes.initial,
+      theme: ThemeData(
+        primarySwatch: AppColors.createMaterialColor(AppColors.primary),
+        scaffoldBackgroundColor: AppColors.background,
+      ),
+      initialRoute: Routes.dashboard,
       routes: {
         Routes.initial: (context) => Splash(),
+        Routes.dashboard: (context) => Dashboard(),
       },
     );
   }
