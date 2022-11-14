@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:river_central/controllers/app_colors.dart';
-import 'package:river_central/views/dashboard.dart';
+import 'package:river_central/views/dashboard/bottom_navigation_binder_with_screens.dart';
+import 'package:river_central/views/dashboard/dashboard.dart';
 import 'package:river_central/views/routes/routes.dart';
 import 'package:river_central/views/splash.dart';
 
@@ -16,6 +17,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'River Central',
+      debugShowCheckedModeBanner: false,
       theme: ThemeData(
         primarySwatch: AppColors.createMaterialColor(AppColors.primary),
         scaffoldBackgroundColor: AppColors.background,
@@ -23,7 +25,9 @@ class MyApp extends StatelessWidget {
       initialRoute: Routes.dashboard,
       routes: {
         Routes.initial: (context) => Splash(),
-        Routes.dashboard: (context) => Dashboard(),
+        Routes.dashboard: (context) => Dashboard(
+              screen: BottomNavigationBinderWithScreens(),
+            ),
       },
     );
   }
