@@ -5,6 +5,8 @@ import 'package:river_central/views/dashboard/dashboard.dart';
 import 'package:river_central/views/routes/routes.dart';
 import 'package:river_central/views/splash.dart';
 
+import 'views/authentication/login.dart';
+
 void main() {
   runApp(const MyApp());
 }
@@ -22,9 +24,10 @@ class MyApp extends StatelessWidget {
         primarySwatch: AppColors.createMaterialColor(AppColors.primary),
         scaffoldBackgroundColor: AppColors.background,
       ),
-      initialRoute: Routes.dashboard,
+      initialRoute: Routes.login,
       routes: {
         Routes.initial: (context) => Splash(),
+        Routes.login: (context) => Login(),
         Routes.dashboard: (context) => Dashboard(
               screen: BottomNavigationBinderWithScreens(),
             ),
