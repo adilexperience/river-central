@@ -16,14 +16,21 @@ class Login extends StatelessWidget {
                 Column(
                   children: [
                     Image.asset('assets/images/login_background_image.png'),
-                    Image.asset('assets/images/Welcome.png')
+                    Text(
+                      'Welcome Back',
+                      style: TextStyle(
+                          fontFamily: 'Raleway',
+                          fontSize: 40.0,
+                          fontWeight: FontWeight.bold,
+                          color: Colors.white),
+                    ),
                   ],
                 ),
               ],
             ),
           ),
           Expanded(
-            flex: 3,
+            flex: 2,
             child: Container(
               decoration: BoxDecoration(
                 color: Colors.white,
